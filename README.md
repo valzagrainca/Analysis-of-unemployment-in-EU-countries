@@ -64,11 +64,11 @@ Seasonal Adjustment (s_adj)
 ### Phase 2
 `Identifying outliers and anomalies`: Used the Z-index method to identify outliers and anomalies, and subsequently remove such data.
 
-`SMOTE algorithm`: After categorizing the 'UNEMPLOYMENT_RATE' column into LOW, MEDIUM and HIGH, we apply the SMOTE algorithm to balance the data.
+`SMOTE algorithm`: We apply the SMOTE algorithm to balance the data after categorizing the 'UNEMPLOYMENT_RATE' column into LOW, MEDIUM and HIGH.
 
-`Train and testing`: The dataset is trained for 'RandomForestClassifier' model and after testing it results that the accurancy of the data is 0.96 (96%), it indicates that the model is performing well in terms of correctly predicting the classes. An accuracy of 96% suggests that the model is making correct predictions for the majority of the instances in the test set.
+`Train and testing`: The dataset is trained for 'RandomForestClassifier' model and after testing it results that the accuracy of the data is 0.96 (96%), it indicates that the model is performing well in terms of correctly predicting the classes. An accuracy of 96% suggests that the model is making correct predictions for the majority of the instances in the test set.
 
-`Skeweed data`: Based on mean, median and mode we determine that we have positive skewnees. Using the skew() method we get the same result. In this analysis we don't need symetrical data but just to show how it would look, we can use the log transformation method and see the distribution.
+`Skeweed data`: Based on mean, median and mode we determine that we have positive skewnees. Using the skew() method we get the same result. In this analysis we don't need symetrical data but just to show how it would look like, we can use the log transformation method and see the distribution.
 
 ## Acknowledgements
 Data sourced from the EU Open Data Portal: EU Open Data Portal
