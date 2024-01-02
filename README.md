@@ -31,7 +31,7 @@ Seasonal Adjustment (s_adj)
 
 ## Dependencies
 - Python 3.x
-- Libraries: Pandas, Warnings, Regular Expressions (re)
+- Libraries: Pandas, Warnings, Regular Expressions (re), Matplotlib.pyplot (as plt), Scipy.stats, NumPy (as np), Scikit-learn: RandomForestClassifier, accuracy_score, classification_report, confusion_matrix, LabelEncoder, train_test_split, Imbalanced-learn: SMOTE, Seaborn (as sns)  
 
 ## Features
 - Categorizes data by country, age, unit, sex, and seasonally adjusted rates.
@@ -50,6 +50,15 @@ Seasonal Adjustment (s_adj)
 ## Requirements
 ### Phase 1
 `Data integration`: Merge the unemployment dataset with the country codes data.
+`Data types`
+- COUNTRY: Nominal (Categorical data representing different countries)
+- AGE: Ordinal (Categorical data with a meaningful order, representing different age groups)
+- SEX: Nominal (Categorical data representing gender)
+- NUMERIC: Nominal (Categorical data representing a numeric identifier for each country)
+- ISO: Nominal (Categorical data representing country codes)
+- MONTH: Ordinal (Categorical data representing months with a meaningful order)
+- YEAR: Ordinal (Categorical data representing years with a meaningful order)
+- UNEMPLOYMENT_RATE: Ratio (Numerical data representing a rate, which includes decimal values)
 
 `Data cleaning`: The unemployment_rate colummn has some dirty datas, so we use the below method to clean it.
 
