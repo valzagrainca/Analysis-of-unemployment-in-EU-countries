@@ -50,16 +50,24 @@ Seasonal Adjustment (s_adj)
 ## Requirements
 ### Phase 1
 `Data integration`: Merge the unemployment dataset with the country codes data.
+
 `Data cleaning`: The unemployment_rate colummn has some dirty datas, so we use the below method to clean it.
+
 ![Alt text](image.png)
+
 `Null values`: We have a small amount of data that are null we choose to delete those data and keep the integrity, since it will not effect the analysis result. Null values are managed in the above function, since the null values are written with ":".
+
 `Dimension reduction`: We choose only this columns for analysis ['Country', 'age', 'unit', 'sex', 'C2', 'Numeric', 'Iso', 'Month', 'Year', 'Unemployment_Rate'].
+
 `Data transformation`: Time series dataset is melted. Transformed the 'Date' column and deaggregate it into 'Month' and 'Year' for improved visualization.
 
 ### Phase 2
 `Identifying outliers and anomalies`: Used the Z-index method to identify outliers and anomalies, and subsequently remove such data.
+
 `SMOTE algorithm`: After categorizing the 'UNEMPLOYMENT_RATE' column into LOW, MEDIUM and HIGH, we apply the SMOTE algorithm to balance the data.
+
 `Train and testing`: The dataset is trained for 'RandomForestClassifier' model and after testing it results that the accurancy of the data is 0.96 (96%), it indicates that the model is performing well in terms of correctly predicting the classes. An accuracy of 96% suggests that the model is making correct predictions for the majority of the instances in the test set.
+
 `Skeweed data`: Based on mean, median and mode we determine that we have positive skewnees. Using the skew() method we get the same result. In this analysis we don't need symetrical data but just to show how it would look, we can use the log transformation method and see the distribution.
 
 ## Acknowledgements
