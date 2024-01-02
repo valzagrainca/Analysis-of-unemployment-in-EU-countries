@@ -1,5 +1,7 @@
 # EU Unemployment Data Analysis
 ## Overview
+This project is developed as part of the "Pre-processing and Visualising Data" course (First Semester of Master's) at the University of Prishtina (UP), Faculty of Electrical and Computer Engineering (FIEK).
+
 This Python script analyzes unemployment data across European Union (EU) countries, focusing on different demographics and spanning from January 2010 to June 2020. The goal is to understand unemployment trends and assess the impact of various factors, including the COVID-19 pandemic.
 
 ## Data Sources
@@ -47,38 +49,65 @@ Seasonal Adjustment (s_adj)
 - Insights into average unemployment rates by year and country.
 - Detailed breakdown of unemployment rates by age, sex, and rate type.
 
+
 ## Requirements
+
 ### Phase 1
-`Data integration`: Merge the unemployment dataset with the country codes data.
 
-`Data types`
-- COUNTRY: Nominal (Categorical data representing different countries)
-- AGE: Ordinal (Categorical data with a meaningful order, representing different age groups)
-- SEX: Nominal (Categorical data representing gender)
-- NUMERIC: Nominal (Categorical data representing a numeric identifier for each country)
-- ISO: Nominal (Categorical data representing country codes)
-- MONTH: Ordinal (Categorical data representing months with a meaningful order)
-- YEAR: Ordinal (Categorical data representing years with a meaningful order)
-- UNEMPLOYMENT_RATE: Ratio (Numerical data representing a rate, which includes decimal values)
+#### Data Integration
+Merge the unemployment dataset with the country codes data.
 
-`Data cleaning`: The unemployment_rate colummn has some dirty datas, so we use the below method to clean it.
+#### Data Types
+- **COUNTRY**: Nominal (Categorical data representing different countries)
+- **AGE**: Ordinal (Categorical data with a meaningful order, representing different age groups)
+- **SEX**: Nominal (Categorical data representing gender)
+- **NUMERIC**: Nominal (Categorical data representing a numeric identifier for each country)
+- **ISO**: Nominal (Categorical data representing country codes)
+- **MONTH**: Ordinal (Categorical data representing months with a meaningful order)
+- **YEAR**: Ordinal (Categorical data representing years with a meaningful order)
+- **UNEMPLOYMENT_RATE**: Ratio (Numerical data representing a rate, which includes decimal values)
 
-![Alt text](image.png)
+#### Data Cleaning
+The 'unemployment_rate' column contains some dirty data, which is cleaned using the method shown below:
 
-`Null values`: We have a small amount of data that are null we choose to delete those data and keep the integrity, since it will not effect the analysis result. Null values are managed in the above function, since the null values are written with ":".
+![Data Cleaning](image.png)
 
-`Dimension reduction`: We choose only this columns for analysis ['Country', 'age', 'unit', 'sex', 'C2', 'Numeric', 'Iso', 'Month', 'Year', 'Unemployment_Rate'].
+#### Null Values
+A small amount of null data is present, and we chose to delete those entries to maintain data integrity. Null values are handled in the above function, where they are denoted with ":".
 
-`Data transformation`: Time series dataset is melted. Transformed the 'Date' column and deaggregate it into 'Month' and 'Year' for improved visualization.
+#### Dimension Reduction
+For analysis, only the following columns are considered: ['Country', 'age', 'unit', 'sex', 'C2', 'Numeric', 'Iso', 'Month', 'Year', 'Unemployment_Rate'].
+
+#### Data Transformation
+The time series dataset is melted, transforming the 'Date' column and deaggregating it into 'Month' and 'Year' for improved visualization.
 
 ### Phase 2
-`Identifying outliers and anomalies`: Used the Z-index method to identify outliers and anomalies, and subsequently remove such data.
 
-`SMOTE algorithm`: We apply the SMOTE algorithm to balance the data after categorizing the 'UNEMPLOYMENT_RATE' column into LOW, MEDIUM and HIGH.
+#### Identifying Outliers and Anomalies
+Utilized the Z-index method to identify outliers and anomalies, subsequently removing such data.
 
-`Train and testing`: The dataset is trained for 'RandomForestClassifier' model and after testing it results that the accuracy of the data is 0.96 (96%), it indicates that the model is performing well in terms of correctly predicting the classes. An accuracy of 96% suggests that the model is making correct predictions for the majority of the instances in the test set.
+#### SMOTE Algorithm
+Applied the SMOTE algorithm to balance the data after categorizing the 'UNEMPLOYMENT_RATE' column into LOW, MEDIUM, and HIGH.
 
-`Skeweed data`: Based on mean, median and mode we determine that we have positive skewnees. Using the skew() method we get the same result. In this analysis we don't need symetrical data but just to show how it would look like, we can use the log transformation method and see the distribution.
+#### Train and Testing
+The dataset is trained for the 'RandomForestClassifier' model. Testing yielded an accuracy of 96%, indicating the model performs well in predicting classes. A 96% accuracy suggests correct predictions for the majority of instances in the test set.
+
+#### Skewed Data
+Analysis indicates positive skewness based on mean, median, and mode. The skew() method also confirms this result. While symmetrical data is not necessary for this analysis, we demonstrate the distribution using the log transformation method to visualize how it would appear.
+
+## Statistical Results
+
+| Statistical Measure | Value          |
+|----------------------|----------------|
+| Count                | 84335.000000   |
+| Mean                 | 12.163285      |
+| Std                  | 8.881315       |
+| Min                  | 1.100000       |
+| 25%                  | 6.000000       |
+| 50%                  | 9.100000       |
+| 75%                  | 15.500000      |
+| Max                  | 60.800000      |
+
 
 ## Acknowledgements
 Data sourced from the EU Open Data Portal: EU Open Data Portal
