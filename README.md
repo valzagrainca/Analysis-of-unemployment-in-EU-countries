@@ -50,6 +50,7 @@ Seasonal Adjustment (s_adj)
 ## Requirements
 ### Phase 1
 `Data integration`: Merge the unemployment dataset with the country codes data.
+
 `Data types`
 - COUNTRY: Nominal (Categorical data representing different countries)
 - AGE: Ordinal (Categorical data with a meaningful order, representing different age groups)
