@@ -125,7 +125,7 @@ With this pie graph visualization we can see the coutnries with highest and lowe
 
 ![3](3.png)
 
-#### Visualize the bar graph based on user selection. User can select year, country, age and sex.
+### Visualize the bar graph based on user selection. User can select year, country, age and sex.
 
 ![4](4.png)
 
