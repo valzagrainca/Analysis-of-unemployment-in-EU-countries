@@ -110,6 +110,10 @@ Analysis indicates positive skewness based on mean, median, and mode. The skew()
 
 ### Phase 3
 
+### Multidimensional visualization
+
+![Alt text](image-1.png)
+
 ### Visualie average unemployment rate for European Union countries
 The visualization is done by using an map to show the average of unemployment rate, based on the year user selects.
 
