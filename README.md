@@ -108,6 +108,23 @@ Analysis indicates positive skewness based on mean, median, and mode. The skew()
 | 75%                  | 15.500000      |
 | Max                  | 60.800000      |
 
+### Phase 3
+
+#### Visualie average unemployment rate for European Union countries
+The visualization is done by using an map to show the average of unemployment rate, based on the year user selects.
+![1](1.png)
+
+#### Visualize the affected age and sex groups during COVID-19 pandemic
+The visualization is done by using a bar chart to show which group and sex age is most affected based on country selected by the user. But after checking the results for each country we can see the Y_LT25(less than 25 years) are the most affacted in most countries.
+![2](2.png)
+
+#### Visualize the countries with highest and lowest unemployment rate during 2010 to 2020
+With this pie graph visualization we can see the coutnries with highest and lowest unemployment rate.
+![3](3.png)
+
+#### Visualize the bar graph based on user selection. User can select year, country, age and sex.
+![4](4.png)
+
 
 ## Acknowledgements
 Data sourced from the EU Open Data Portal: EU Open Data Portal
